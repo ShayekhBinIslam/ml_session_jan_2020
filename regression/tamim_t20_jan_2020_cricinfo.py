@@ -2,7 +2,7 @@
 """
 Created on Sun Jan 26 15:14:54 2020
 
-@author: Shayekh_BUET1705009
+@author: Shayekh
 """
 
 url = 'http://stats.espncricinfo.com/ci/engine/player/56194.html?class=3;template=results;type=allround;view=match'
@@ -34,9 +34,9 @@ for rows in data:
     ground.append(row[7].text)
     date.append(row[8].text)
 
-date = [pd.to_datetime(a, format='%Y-%m-%d', infer_datetime_format=True) for a in date]
+date = [pd.to_datetime(a, format='%d-%m-%Y', infer_datetime_format=True) for a in date]
 #from datetime import datetime
-date = [a.strftime('%Y-%m-%d') for a in date]
+date = [a.strftime('%d-%m-%Y') for a in date]
 
 import pandas as pd
 df = pd.DataFrame({'date': date, 'runs': runs,\
@@ -44,5 +44,5 @@ df = pd.DataFrame({'date': date, 'runs': runs,\
 
 
 df.to_csv('tamim_t20_jan_2020_stat_cricinfo.csv', \
-          index=False, date_format='%m-%d-%Y')
+          index=False, date_format='%d-%m-%Y')
 
