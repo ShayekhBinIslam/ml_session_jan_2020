@@ -5,7 +5,8 @@ Created on Sun Jan 26 15:14:54 2020
 @author: Shayekh
 """
 
-url = 'http://stats.espncricinfo.com/ci/engine/player/56194.html?class=3;template=results;type=allround;view=match'
+url = 'http://stats.espncricinfo.com/ci/engine/player/56194.html'
+      '?class=3;template=results;type=allround;view=match'
       
 from requests import get
 response = get(url)
