@@ -35,7 +35,7 @@ for rows in data:
     ground.append(row[7].text)
     date.append(row[8].text)
 
-date = [pd.to_datetime(a, format='%d-%m-%Y', infer_datetime_format=True) for a in date]
+date = [pd.to_datetime(a, format='%d-%m-%Y') for a in date]
 #from datetime import datetime
 date = [a.strftime('%d-%m-%Y') for a in date]
 
